@@ -1,0 +1,1266 @@
+{
+	"meta": {
+		"chronografVersion": "1.8.2",
+		"sources": {
+			"5": {
+				"name": "Influxdb",
+				"link": "/chronograf/v1/sources/5"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "18",
+		"cells": [
+			{
+				"i": "473cd0f5-066e-4845-b49c-2ee1fa158327",
+				"x": 6,
+				"y": 7,
+				"w": 6,
+				"h": 4,
+				"name": "Stopped Devices",
+				"queries": [
+					{
+						"query": "SELECT count(\"disabled\") AS \"count_disabled\" FROM \"telegraf\".\"autogen\".\"status\" WHERE \"started\"=false AND time > now() - 10m GROUP BY \"device\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT count(\"disabled\") AS \"count_disabled\" FROM \"telegraf\".\"autogen\".\"status\" WHERE \"started\"=false AND time > now() - 10m GROUP BY \"device\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": false
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "device",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "status.count_disabled",
+						"displayName": "",
+						"visible": false
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/473cd0f5-066e-4845-b49c-2ee1fa158327"
+				}
+			},
+			{
+				"i": "24d07c68-48a1-4ab0-bdb1-a207861e392d",
+				"x": 0,
+				"y": 7,
+				"w": 6,
+				"h": 4,
+				"name": "Disabled Devices",
+				"queries": [
+					{
+						"query": "SELECT count(\"disabled\") AS \"count_disabled\" FROM \"telegraf\".\"autogen\".\"status\" WHERE \"disabled\"=true AND time > now() - 10m GROUP BY \"device\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT count(\"disabled\") AS \"count_disabled\" FROM \"telegraf\".\"autogen\".\"status\" WHERE \"disabled\"=true AND time > now() - 10m GROUP BY \"device\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": false
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "device",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "status.count_disabled",
+						"displayName": "",
+						"visible": false
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/24d07c68-48a1-4ab0-bdb1-a207861e392d"
+				}
+			},
+			{
+				"i": "435af2de-7fd1-43f2-a622-e21ddc527c61",
+				"x": 8,
+				"y": 0,
+				"w": 4,
+				"h": 2,
+				"name": "Errored",
+				"queries": [
+					{
+						"query": "SELECT count(\"status\") AS \"count_status\" FROM \"telegraf\".\"autogen\".\"status\" WHERE \"status\"!=0 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(10m) FILL(linear)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT count(\"status\") AS \"count_status\" FROM \"telegraf\".\"autogen\".\"status\" WHERE \"status\"!=0 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(10m) FILL(linear)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/435af2de-7fd1-43f2-a622-e21ddc527c61"
+				}
+			},
+			{
+				"i": "912dd494-0d10-4ed6-8979-059c2aa86b76",
+				"x": 0,
+				"y": 0,
+				"w": 4,
+				"h": 2,
+				"name": "Total Devices",
+				"queries": [
+					{
+						"query": "SELECT count(\"id\") AS \"Vendor\" FROM \"telegraf\".\"autogen\".\"status\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(10m) FILL(linear)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "status",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "count",
+									"type": "func",
+									"alias": "Vendor",
+									"args": [
+										{
+											"value": "id",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "10m",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "linear",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "Devices by Vendor",
+						"prefix": "",
+						"suffix": " ",
+						"base": "raw",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#4591ED",
+						"name": "ocean",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/912dd494-0d10-4ed6-8979-059c2aa86b76"
+				}
+			},
+			{
+				"i": "7b407956-2c41-4168-a30c-65a80912d2d1",
+				"x": 4,
+				"y": 0,
+				"w": 4,
+				"h": 2,
+				"name": "Stopped or Disabled",
+				"queries": [
+					{
+						"query": "SELECT count(\"id\") AS \"Vendor\" FROM \"telegraf\".\"autogen\".\"status\" WHERE (\"started\"=false OR \"disabled\"=true) AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(10m) FILL(linear)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT count(\"id\") AS \"Vendor\" FROM \"telegraf\".\"autogen\".\"status\" WHERE (\"started\"=false OR \"disabled\"=true) AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(10m) FILL(linear)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "Devices by Vendor",
+						"prefix": "",
+						"suffix": " ",
+						"base": "raw",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#F48D38",
+						"name": "tiger",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/7b407956-2c41-4168-a30c-65a80912d2d1"
+				}
+			},
+			{
+				"i": "baf2386c-4a30-452d-9fbe-06d1bf3986ae",
+				"x": 6,
+				"y": 11,
+				"w": 6,
+				"h": 7,
+				"name": "Stopped and Disabled Devices",
+				"queries": [
+					{
+						"query": "SELECT count(\"disabled\") AS \"Disabled\" FROM \"telegraf\".\"autogen\".\"status\" WHERE \"disabled\"=true AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(1m) FILL(linear)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT count(\"disabled\") AS \"Disabled\" FROM \"telegraf\".\"autogen\".\"status\" WHERE \"disabled\"=true AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(1m) FILL(linear)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT count(\"started\") AS \"Stopped\" FROM \"telegraf\".\"autogen\".\"status\" WHERE \"started\"=false AND \"disabled\"=false AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(1m) FILL(linear)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT count(\"started\") AS \"Stopped\" FROM \"telegraf\".\"autogen\".\"status\" WHERE \"started\"=false AND \"disabled\"=false AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(1m) FILL(linear)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "Devices",
+						"prefix": "",
+						"suffix": "",
+						"base": "raw",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-stepplot",
+				"colors": [
+					{
+						"id": "487f8a13-af36-487e-9fa2-81c0656809df",
+						"type": "scale",
+						"hex": "#8F8AF4",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					},
+					{
+						"id": "36a10c3c-a824-4ab4-acdb-924628e1c33b",
+						"type": "scale",
+						"hex": "#A51414",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					},
+					{
+						"id": "0bdd4b68-0796-4573-b350-9709327d79c0",
+						"type": "scale",
+						"hex": "#F4CF31",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					}
+				],
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "status.count_started",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/baf2386c-4a30-452d-9fbe-06d1bf3986ae"
+				}
+			},
+			{
+				"i": "4ff4764b-944f-4435-8b41-03431fe50add",
+				"x": 0,
+				"y": 11,
+				"w": 6,
+				"h": 7,
+				"name": "Device Count by Model",
+				"queries": [
+					{
+						"query": "SELECT count(\"id\") AS \"Count\" FROM \"telegraf\".\"autogen\".\"status\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(10m), \"model\" FILL(linear)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "status",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "count",
+									"type": "func",
+									"alias": "Count",
+									"args": [
+										{
+											"value": "id",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "10m",
+								"tags": [
+									"model"
+								]
+							},
+							"areTagsAccepted": false,
+							"fill": "linear",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "Devices by Vendor",
+						"prefix": "",
+						"suffix": "",
+						"base": "raw",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-stacked",
+				"colors": [
+					{
+						"id": "487f8a13-af36-487e-9fa2-81c0656809df",
+						"type": "scale",
+						"hex": "#8F8AF4",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					},
+					{
+						"id": "36a10c3c-a824-4ab4-acdb-924628e1c33b",
+						"type": "scale",
+						"hex": "#A51414",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					},
+					{
+						"id": "0bdd4b68-0796-4573-b350-9709327d79c0",
+						"type": "scale",
+						"hex": "#F4CF31",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					}
+				],
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/4ff4764b-944f-4435-8b41-03431fe50add"
+				}
+			},
+			{
+				"i": "a47e8046-294f-456f-bb02-24d95bf06ce7",
+				"x": 6,
+				"y": 2,
+				"w": 6,
+				"h": 5,
+				"name": "Devices with Errors",
+				"queries": [
+					{
+						"query": "SELECT last(\"status\") AS \"Status\" FROM \"telegraf\".\"autogen\".\"status\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(10m), \"device\" FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "status",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Status",
+									"args": [
+										{
+											"value": "status",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "10m",
+								"tags": [
+									"device"
+								]
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Status code",
+						"prefix": "",
+						"suffix": "",
+						"base": "raw",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "471ac076-185b-4946-b988-dbeebba750dc",
+						"type": "scale",
+						"hex": "#FD7A5D",
+						"name": "Delorean",
+						"value": "0"
+					},
+					{
+						"id": "7a7a8833-6c79-482c-9358-e709656bae28",
+						"type": "scale",
+						"hex": "#5F1CF2",
+						"name": "Delorean",
+						"value": "0"
+					},
+					{
+						"id": "503fe32c-ea6d-415a-bae5-d64ef9a921d8",
+						"type": "scale",
+						"hex": "#4CE09A",
+						"name": "Delorean",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/a47e8046-294f-456f-bb02-24d95bf06ce7"
+				}
+			},
+			{
+				"i": "95a577ce-91b5-45ae-8d16-ee15108dc93b",
+				"x": 6,
+				"y": 18,
+				"w": 6,
+				"h": 7,
+				"name": "Device Count by Vendor",
+				"queries": [
+					{
+						"query": "SELECT count(\"id\") AS \"Vendor\" FROM \"telegraf\".\"autogen\".\"status\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(10m), \"vendor\" FILL(linear)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "status",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "count",
+									"type": "func",
+									"alias": "Vendor",
+									"args": [
+										{
+											"value": "id",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "10m",
+								"tags": [
+									"vendor"
+								]
+							},
+							"areTagsAccepted": false,
+							"fill": "linear",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "Devices by Vendor",
+						"prefix": "",
+						"suffix": "",
+						"base": "raw",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-stacked",
+				"colors": [
+					{
+						"id": "487f8a13-af36-487e-9fa2-81c0656809df",
+						"type": "scale",
+						"hex": "#8F8AF4",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					},
+					{
+						"id": "36a10c3c-a824-4ab4-acdb-924628e1c33b",
+						"type": "scale",
+						"hex": "#A51414",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					},
+					{
+						"id": "0bdd4b68-0796-4573-b350-9709327d79c0",
+						"type": "scale",
+						"hex": "#F4CF31",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					}
+				],
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/95a577ce-91b5-45ae-8d16-ee15108dc93b"
+				}
+			},
+			{
+				"i": "7d7bbadf-4bfa-4c53-a21d-7e434fa9c65c",
+				"x": 0,
+				"y": 2,
+				"w": 6,
+				"h": 5,
+				"name": "Device with Error",
+				"queries": [
+					{
+						"query": "SELECT last(\"error_message\") AS \"Error message\" FROM \"telegraf\".\"autogen\".\"status\" WHERE time > now() - 10m GROUP BY \"device\", \"vendor\" FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "status",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Error message",
+									"args": [
+										{
+											"value": "error_message",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": [
+									"device",
+									"vendor"
+								]
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": {
+								"upper": "",
+								"lower": "now() - 10m"
+							},
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": false
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "device",
+						"displayName": "Device",
+						"visible": true
+					},
+					{
+						"internalName": "vendor",
+						"displayName": "Vendor",
+						"visible": true
+					},
+					{
+						"internalName": "status.Error message",
+						"displayName": "Error Message",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/7d7bbadf-4bfa-4c53-a21d-7e434fa9c65c"
+				}
+			}
+		],
+		"templates": [],
+		"name": "Device Status",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/18",
+			"cells": "/chronograf/v1/dashboards/18/cells",
+			"templates": "/chronograf/v1/dashboards/18/templates"
+		}
+	}
+}
